@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ae16805c70856af4b9c24df449461f08
+timeCreated: 1521904868
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pacman: {fileID: 1604419273131502, guid: 9dd3216105479bb45b4d4a0f8e656f4c, type: 2}
+  - links: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
