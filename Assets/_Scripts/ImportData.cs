@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class ImportData : MonoBehaviour {
 
@@ -9,6 +10,9 @@ public class ImportData : MonoBehaviour {
 
     [SerializeField]
     TextAsset links;
+
+    [SerializeField]
+    Text dataDemo;  // for debugging purposes
 
     char fieldSeperator = ',';
     char lineSeperator = '\n';
@@ -29,7 +33,6 @@ public class ImportData : MonoBehaviour {
         }
 
     }
-
 
     // Use this for initialization
     void Start () {
@@ -55,7 +58,7 @@ public class ImportData : MonoBehaviour {
     /// Extracts the fields from each line in the lines array and subsequently places those values in 
     /// the Data dictionary where the Key is the track number, and it's value is a list of Vector2 structs.
     /// </summary>
-    /// <param name="lines"></param>
+    /// <param name="lines">The lines the script will run through</param>
     void SetUpFields(string[] lines)
     {
         // run though all lines
@@ -87,10 +90,19 @@ public class ImportData : MonoBehaviour {
 
         }
 
-        //foreach (KeyValuePair<int, Vector2> kvp in data)
-        //{
-        //    //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-        //    textBox3.Text += string.Format("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-        //}
+        // for debugging we want to see that the data is being handled and set up correctly
+        DemonstrateData();
+    }
+
+
+    /// <summary>
+    /// Places the data in a text visible version for debugging purposes
+    /// </summary>
+    private void DemonstrateData()
+    {
+        foreach (KeyValuePair<int, List<Vector2>> kvp in data)
+        {
+            dataDemo.text += string.Format("\n Key = {0}, Value = {1}", kvp.Key, kvp.Value[0]);
+        }
     }
 }
