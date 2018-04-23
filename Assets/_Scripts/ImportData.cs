@@ -102,7 +102,7 @@ public class ImportData : MonoBehaviour {
     {
         foreach (KeyValuePair<int, List<Vector2>> kvp in data)
         {
-            dataDemo.text += string.Format("\n Key = {0}, Value = {1}", kvp.Key, kvp.Value[0]);
+            dataDemo.text += string.Format("\n Key = {0}, Value = {1}, Number of entries = {2}", kvp.Key, kvp.Value[0], kvp.Value.Count);
         }
     }
 }
